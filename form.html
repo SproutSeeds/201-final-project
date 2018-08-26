@@ -1,10 +1,55 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title> </title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>Resource Questionnaire</title>
     </head>
 
     <body>
-        <input>
+        <header>
+            <ul>
+                <li>
+                    Get Started
+                </li>
+                <li>
+                    About Us
+                </li>
+                <li>
+                    Volunteer
+                </li>
+            </ul>
+        </header>
+        <main>
+            <form>
+                <label>User Name:</label><br>
+                <input type="text" name="firstname"><br><br>
+
+                <label>Do you have kids?<br> If so, how many?</label><br>
+                <input type="text" name="number-of-kids"><br><br>
+
+                <label>Gender:</label><br>
+                <input type="radio" name="gender" value="male" checked> Male<br>
+                <input type="radio" name="gender" value="female"> Female<br><br>
+
+                <label>Do you need food assistance?</label><br>
+                <input type="radio" name="food" value="yes" checked> Yes<br>
+                <input type="radio" name="food" value="no"> No<br><br>
+
+                <label>Do you need help with Drug Abuse?</label><br>
+                <input type="radio" name="drug" value="yes" checked> Yes<br>
+                <input type="radio" name="drug" value="no"> No<br><br>
+
+                <label>Do you need help with Alcohol Abuse?</label><br>
+                <input type="radio" name="alcohol" value="yes" checked> Yes<br>
+                <input type="radio" name="alcohol" value="no"> No<br><br>
+
+                <label>Do you want to see therapy resource options?</label><br>
+                <input type="radio" name="therapy" value="yes" checked> Yes<br>
+                <input type="radio" name="therapy" value="no"> No<br><br>
+            </form>
+        </main> 
+        <script src="js/app.js"></script>
     </body>
 </html>

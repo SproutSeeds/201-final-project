@@ -2,16 +2,14 @@
 Creating a form of up to 10 questions to set the PIN demographic.
 
 FORM
-1. Gender  -- shelter
-2. Age     -- shelter
+1. Gender
+2. Age
 3. Number of Kids
 4. Food Needed?
-5. Religious Restrictions
-6. Name with opportunity to opt out
-7. Drug Treatment Needed
-8. Alcohol Treatment Needed
-9. General Counseling Therapy
-10. Interested in Career Support
+5. Drug Treatment Needed
+6. Alcohol Treatment Needed
+7. General Counseling Therapy
+8. Contact information for you.
 
 Having atleast 3 catch all default resources to provide to the PIN.
 Store all the answers to the form.
@@ -24,9 +22,10 @@ Service Categories
 4. Mental Health Treatment
 5. Translation Services
 
-Having an explicit data points from user and the agency themselves.
+#Outputed Patient demographic information
+A small paragraph of information shown to the user to hone in on their situation and could be emailed to resources or printed out and shown to resources. This is especially beneficial to people that do not speak the english language.
 
-Create the data structure
+
 
 #Stretch Goals
 Mobile responsive web page.
