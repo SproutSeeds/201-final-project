@@ -25,8 +25,6 @@ Service Categories
 #Outputed Patient demographic information
 A small paragraph of information shown to the user to hone in on their situation and could be emailed to resources or printed out and shown to resources. This is especially beneficial to people that do not speak the english language.
 
-
-
 #Stretch Goals
 Mobile responsive web page.
 Tablet responsive web page.
