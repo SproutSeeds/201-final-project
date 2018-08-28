@@ -1,89 +1,127 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <link rel="stylesheet" href="css/reset.css" />
-        <link rel="stylesheet" href="css/style.css" />
-        <link rel="stylesheet" href="css/get-started.css" />
-        <title>Resource Questionnaire</title>
-    </head>
 
-    <body>
-        <header>
-          <div class="bg fade-in" id="bg-opacity" >
-            <header>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" type="text/css" href="css/reset.css" />
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <link rel="stylesheet" type="text/css" href="css/get-started.css" />
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+    crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Architects+Daughter" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <title>Safe Camp</title>
+  <link rel="icon" type="image/png" href="img/safecamp-logo.png" />
 
-                    <div class="row">
-                            <div class="col-1 col-nav"><a href="my-results.html">My Results</a></div> 
-                            <div class="col-2 col-nav"><a href="about-us.html">About Us</a></div>                            
-                            <div class="col-3 col-nav"><a href="get-started.html">Get Started</a></div>
-                    </div>
+  <title>Resource Questionnaire</title>
+</head>
 
-                    <i class="fa fa-cloud col-2 faded" id="icon-attribute"> <div class="fade-in"></div></i>
-            </header>
+<body>
+  <header>
+    <nav>
 
+      <div class="logo">
+        <a href="index.html">
+          <img src="img/safecamp-logo.png" alt="Home"> </a>
       </div>
-        </header>
-        <main>
-            
-            <div class="form-container">
-                <form id="new-user-form">
-                  <fieldset>
-                    <legend><span class="number">1</span>Enter your info</legend>
-            
-                    <!-- GENDER -->
-                    <select required id="gender" name="field1">
-                      <option value="" disabled selected>Your gender identity</option>
-                      <option value="male">Male</option>
-                      <option value="female">Female</option>
-                      <option value="other">Other</option>
-                      <option value="not-say">Rather Not Say</option>
-                    </select>
-            
-                    <!-- AGE -->
-                    <select required id="age" name="field2">
-                      <option value="" disabled selected>Age</option>
-                      <option value="under-18">Under 18</option>
-                      <option value="18-59">18 to 59</option>
-                      <option value="59-and-over">59 and over</option>
-                    </select>
-            
-                    <!-- CHILDREN -->
-                    <select required id="children" name="field3">
-                      <option value="" disabled selected>Do you have children with you?</option>
-                      <option value="yes">Yes</option>
-                      <option value="no">No</option>
-                    </select>
-                  </fieldset>
-            
-            
-                  <!-- CHECKBOX QUESTIONS -->
-                  <fieldset>
-                    <legend><span class="number">2</span><span class="legend-description">Which of the following are you interested in?</span></legend>
-            
-                    <label class="container">Shelter
-                      <input type="checkbox" id="shelter">
-                      <span class="checkmark"></span>
-                    </label>
-                    <label class="container">Drug or Alcohol Treatment
-                      <input type="checkbox" id="drug-alcohol">
-                      <span class="checkmark"></span>
-                    </label>
-                    <label class="container">Food Assistance
-                      <input type="checkbox" id="food">
-                      <span class="checkmark"></span>
-                    </label>
-                    <label class="container">Mental Health Treatment
-                      <input type="checkbox" id="mental-health">
-                      <span class="checkmark"></span>
-                    </label>
-            
-                  </fieldset>
-                  <input type="submit" value="Submit" />
-                </form>
-              </div>
+      <div class="company-name">
+        <h1>Safe Camp</h1>
+      </div>
+      <div class="my-results-link">
+        <a href="my-results.html">My Results</a>
+      </div>
+      <div class="about-us-link">
+        <a href="about-us.html">About Us</a>
+      </div>
+    </nav>
 
-        </main> 
-        <script src="js/get-started.js"></script>
-    </body>
+    <i class="fa fa-cloud col-2 faded" id="icon-attribute"> <div class="fade-in"></div></i>
+    <header>
+
+      <div class="row">
+        <div class="col-1 col-nav"><a href="my-results.html">My Results</a></div>
+        <div class="col-2 col-nav"><a href="about-us.html">About Us</a></div>
+        <div class="col-3 col-nav"><a href="get-started.html">Get Started</a></div>
+      </div>
+
+      <i class="fa fa-cloud col-2 faded" id="icon-attribute"> <div class="fade-in"></div></i>
+    </header>
+
+    </div>
+  </header>
+  <main>
+
+    <ul id="welcome">
+
+    </ul>
+
+    <div class="form-container">
+      <form id="new-user-form">
+        <fieldset>
+          <legend><span class="number">1</span>Enter your info</legend>
+
+          <!-- GENDER -->
+          <select required id="gender" name="field1">
+            <option value="" disabled selected>Your gender identity</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+            <option value="not-say">Rather Not Say</option>
+          </select>
+
+          <!-- AGE -->
+          <select required id="age" name="field2">
+            <option value="" disabled selected>Age</option>
+            <option value="under-18">Under 18</option>
+            <option value="18-59">18 to 59</option>
+            <option value="59-and-over">59 and over</option>
+          </select>
+
+          <!-- CHILDREN -->
+          <select required id="children" name="field3">
+            <option value="" disabled selected>Do you have children with you?</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select>
+        </fieldset>
+
+
+        <!-- CHECKBOX QUESTIONS -->
+        <fieldset>
+          <legend><span class="number">2</span><span class="legend-description">Which of the following are you interested
+              in?</span></legend>
+
+          <label class="container">Shelter
+            <input type="checkbox" id="shelter">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Drug or Alcohol Treatment
+            <input type="checkbox" id="drug-alcohol">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Food Assistance
+            <input type="checkbox" id="food">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Mental Health Treatment
+            <input type="checkbox" id="mental-health">
+            <span class="checkmark"></span>
+          </label>
+
+        </fieldset>
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+
+  </main>
+  <footer>
+      <p>Suggestions, questions, or input? Get in touch: safecampsite@gmail.com</p>
+  </footer>
+
+  <script src="js/get-started.js"></script>
+</body>
+
 </html>
