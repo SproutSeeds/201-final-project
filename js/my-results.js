@@ -2,6 +2,8 @@
 
 var welcomeEl = document.getElementById('welcome');
 
+var resources = [];
+var userResources = [];
 
 //Render Welcome Message
 function renderWelcome() {
@@ -16,24 +18,83 @@ function renderWelcome() {
     welcomeEl.appendChild(h2El);
   }
 }
-renderWelcome();
+
 
 //Pull down user object from localstorage
 var userProfile = JSON.parse(localStorage.getItem('locallyStoredUser'));
 
 //Transform user object values to boolean to match resource values
-var userAllWomen = userProfile.gender === 'female' ? true : false;
-var userAllMen = userProfile.gender === 'male' ? true : false;
-var userMenOverSixty = userProfile.gender === 'male' && userProfile.age ===   '59-and-over' ? true : false;
-var userHasChildren = userProfile.children === true ? true : false;
-var userOverEighteen = userProfile.age === 'under-18' ? true : false;
+var userAllWomen = false;
+if(userProfile.gender === 'female' || userProfile.gender === 'other' || userProfile.gender === 'not-say') {
+  userAllWomen = true;
+}
+var userAllMen = false;
+if(userProfile.gender === 'male' || userProfile.gender === 'other' || userProfile.gender === 'not-say') {
+  userAllMen = true;
+}
+var userMenOverSixty = false;
+if((userProfile.gender === 'male' || userProfile.gender === 'other' || userProfile.gender === 'not-say') && userProfile.age === '59-and-over') {
+  userMenOverSixty = true;
+}
+
+var userHasChildren = userProfile.children;
+var userOverEighteen = false;
+if(userProfile.age === 'under-18'){
+  userOverEighteen = true;
+}
+
+var userShelter = userProfile.shelter;
+var userDrugAlcohol = userProfile.drugAlcohol;
+var userMentalTherapy = userProfile.mentalTherapy;
+var userFood = userProfile.food;
+
 
 //Populate array of resources for user
-var userResources = [];
 
 
+function compareUserResources () {
+  for (var i = 0; i < resources.length; i++){
+    console.log('in the for loop');
+    if (userShelter === true && resources[i].shelter === true) {
+      if ((userAllWomen === resources[i].allWomen && userHasChildren === resources[i].hasChildren) || (userAllWomen === resources[i].allWomen && (userHasChildren === false && resources[i].hasChildren === true))){
+        userResources.push(resources[i]);
+      } else if (userAllMen === resources[i].allMen){
+        userResources.push(resources[i]);
+      } else if (userMenOverSixty === resources[i].menOverSixty) {
+        userResources.push(resources[i]);
+      } else if (userOverEighteen === resources[i].overEighteen){
+        userResources.push(resources[i]);
+      }
+    }
+    if (userDrugAlcohol === true && resources[i].drugAlcohol === true) {
+      userResources.push(resources[i]);
+    }
+    if (userMentalTherapy === true && resources[i].mentalTherapy === true) {
+      userResources.push(resources[i]);
+    }
+    if (userFood === true && resources[i].food === true) {
+      userResources.push(resources[i]);
+    }
+  }
+}
 
-var resources = [];
+
+//Removing duplicates from array of user resources
+function removeUserResourcesDupes(){
+  for (var i = 0; i < userResources.length; i++){
+    for (var j = i + 1; j < userResources.length; j++) {
+      if(userResources[i].name === userResources[j].name){
+        console.log('before splice');
+        userResources.splice(j, 1);
+        j--;
+      }
+    }
+  }
+}
+
+// var uniqueUserResources = userResources.filter();
+
+
 //constructor function to create resource objects
 function Resource(name, url, phone, address, description, shelter, food, drugAlcohol, mentalTherapy, women, men, menOverSixty, hasChildren, overEighteen) {
   this.name = name;
@@ -138,6 +199,16 @@ new Resource('After Hours Psych Line','crisisclinic.org', '(866) 427-4747', fals
 new Resource('Washington Recovery Helpline','warecoveryhelpline.org', '(866) 789-1511', false, 'The Washington Recovery Help Line is a program of Crisis Connections. We offer an anonymous, confidential 24-hour help line for Washington State residents. Our services include crisis intervention and referral assistance related to substance use disorder, problem gambling, and mental health challenges. Professionally-trained volunteers and staff provide emotional support and connect callers with local treatment resources or additional community services. Hope is out there. Let us help.', false, false, true, true, true, true, true, true, true);
 new Resource('Evergreen Treatment Services','evergreentx.org/medication-assisted-treatment/', '(206) 223-3644', '1700 Airport Way South', 'ETS uses medication to help stabilize the brain functioning of people with opioid use disorders. This treatment recognizes the effects of prolonged opioid use on the brain and helps to manage this medical condition by stabilizing brain chemistry. Once a patient is medically stabilized, they are better equipped to tackle the difficult emotional and environmental circumstances surrounding recovery. We combine medication with important rehabilitative services in our federally accredited opioid treatment program.', false, false, true, true, true, true, true, true, true);
 new Resource('211','win211.org', '211', false, 'Washington 211 exists to make people’s lives better; to enhance community resiliency; to identify and break cycles of need, and to help organizations, foundations, businesses, individuals and government more efficiently distribute resources.', true, true, true, true, true, true, true, true, true);
+
+
+//Call functions
+renderWelcome();
+console.log(resources);
+compareUserResources();
+console.log(userResources);
+removeUserResourcesDupes();
+console.log(userResources);
+
 
 
 // function listAllResources() {
