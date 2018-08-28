@@ -1,7 +1,7 @@
 i {
     visibility: hidden;
 }
-/* This sets the float property to each column */
+
 nav {
     display: grid;
     grid-template-columns: 10vw 50vw 20vw 20vw;
@@ -48,7 +48,6 @@ body, html {
     margin-bottom: -80vw;
     background-color: black;
     font-family: 'Roboto', sans-serif;
-    overflow: hidden;
 }
 /* Background Creation */
 .bg {
@@ -83,47 +82,11 @@ footer {
     height: 80px;
 }
 
-/* Erin I likely broke this with renaming the elements in the nav bar - salvage the below or take a different approach (e.g. vw)?    
-@media (max-width: 1407px) {
-    .col-nav {
-    margin-right: 5%;
-    width: 20%;
-    }
-} 
-
-@media (max-width: 937px) {
-    .col-nav {
-        margin-right: 5%;
-        width: 25%;
-    }
-}
-
-@media (max-width: 705px) {
-    .col-nav {
+@media (max-width: 860px) {
+     .homepage-center {
         display: block;
     }
 }
-
-@media (max-width: 565px) {
-    i {
-        /* Make an icon become a dropdown menu */
-        /* visibility: visible;
-    } */
- 
-
-    /* #icon-attribute {
-        font-size: 100px;
-        margin: 0 0 0px 0px;
-        position: relative;
-        right: 35%;
-        color:rgb(0, 38, 255);
-        cursor: pointer;
-    }
-    #icon-attribute:hover {
-        color:purple;
-        opacity: .8;
-    }
-} */
 
 .main-about-us {
     width: 61vw;
@@ -194,6 +157,16 @@ h1 {
     font-size: 5vw;
 }
 
+h2 {
+    font-family: 'Architects Daughter', cursive;
+    width: 50vw;
+    margin: 3vw auto;
+    font-size: 3vw;
+    color: black;
+    background-color: whitesmoke;
+    text-align: center;
+    border-radius: 5px;
+}
 
 input {
     height: 2vw;
