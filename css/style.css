@@ -2,30 +2,58 @@ i {
     visibility: hidden;
 }
 /* This sets the float property to each column */
-[class*="col-"] {
-    box-sizing: border-box;
-    float: right;
-    padding: 25px;
-    font-size: 20px;
-    margin-right: 5%;
-}
-/* This clears the float property after each column */
-.row::after {
-    content: "";
-    clear: both;
-    display: table;
+nav {
+    display: grid;
+    grid-template-columns: 10vw 50vw 20vw 20vw;
+    padding-top: 2vw;
+    padding-bottom: 2vw;
 }
 
+a:link {
+    color: white;
+    text-decoration: none;
+}
+
+
+a:visited {
+    color: white;
+}
+
+div.my-results-link, div.about-us-link {
+    font-family: 'Architects Daughter', cursive;
+    font-size: 2vw;
+    text-align: center;
+    padding: 2vw 1vw 2vw 1vw;
+    margin-right: 2vw;
+    margin-left: 2vw;
+    border: 2px solid black;
+    border-radius: 5px;
+    background: black;
+}
+
+div.my-results-link:hover, div.about-us-link:hover {
+    background-color: #DC3D24;
+    border: 2px solid #DC3D24;
+}
+
+.logo {
+    padding-left: 2vw;
+    height: 1vw;
+    width: 1vw;
+}
+
+
 body, html {
-    height: 100%;
-    margin: 0;
-    margin-bottom: -330px;
+    height: 100vw;
+    margin-bottom: -80vw;
     background-color: black;
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden;
 }
 /* Background Creation */
 .bg {
-    background-image: url("../img/signpost.jpg");
-    height: 100%; 
+    background-image: url("../img/woodfence.jpg");
+    height: 100vw; 
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -39,36 +67,23 @@ body, html {
 header {
     background-color: white;
     opacity: 0.7;
+    height: 10vw;
 }
 
 footer {
+    position: fixed;
+    width: 100vw;
+    bottom: 0;
     background-color: white;
     opacity: 0.7;
     font-weight: bold;
-    font-size: 10 em;
-    position: relative;
+    font-size: 2vw;
     text-align: center;
-}
-.col-1 {
-    width: 10%;
-    color: black;
-}
-.col-2 {
-    width: 10%;
-    color: black;
-}
-.col-3 {
-    width: 30%;
-    color: black;
-    font-size: 5em;
-    float: left;
+    line-height: 5vw;
+    height: 80px;
 }
 
-.col-4 {
-    width: 10%;
-    float: right;
-}
-    
+/* Erin I likely broke this with renaming the elements in the nav bar - salvage the below or take a different approach (e.g. vw)?    
 @media (max-width: 1407px) {
     .col-nav {
     margin-right: 5%;
@@ -92,12 +107,11 @@ footer {
 @media (max-width: 565px) {
     i {
         /* Make an icon become a dropdown menu */
-        visibility: visible;
-    }
-    .row {
-        display: none;
-    }
-    #icon-attribute {
+        /* visibility: visible;
+    } */
+ 
+
+    /* #icon-attribute {
         font-size: 100px;
         margin: 0 0 0px 0px;
         position: relative;
@@ -109,11 +123,10 @@ footer {
         color:purple;
         opacity: .8;
     }
-}
+} */
 
 .main-about-us {
     width: 61vw;
-    height: 42vw;
     margin: 2vw auto;
     background-color: whitesmoke;
     opacity: 0.7;
@@ -147,13 +160,44 @@ footer {
     left: 0vw;
     position: absolute;
 }
-=======
-.homepage-center {
-    display: grid;
-    width: 50%;
-    grid-template-columns: 1fr 1fr;
+
+.intro-text {
+    position: relative;
+    float: left;
+    width: 40vw;
+    font-size: 2vw;
+    margin: 4vw;
+    padding: 3%;
+    background-color: whitesmoke;
+    opacity: 0.9;
+    border-radius: 5px;
+    line-height: 1.5;
+}
+
+
+.form-container {
+    position: relative;
+    float: right;
+    width: 35vw;
+    margin: 8vw 4vw 4vw 3vw;
+    background-color: #DC3D24;
+    padding: 2%;
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2vw;
+    text-align: center;
+
 }
 
 h1 {
     font-family: 'Architects Daughter', cursive;
+    font-size: 5vw;
+}
+
+
+input {
+    height: 2vw;
+    width: 20vw;
+    margin: 1vw auto;
+    font-size: 1vw;
 }
