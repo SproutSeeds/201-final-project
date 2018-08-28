@@ -1,5 +1,37 @@
 'use strict';
 
+var welcomeEl = document.getElementById('welcome');
+
+
+//Render Welcome Message
+function renderWelcome() {
+  var name = JSON.parse(localStorage.getItem('username'));
+  var h2El = document.createElement('h2');
+
+  if(name === null){
+    h2El.textContent = 'Welcome';
+    welcomeEl.appendChild(h2El);
+  } else {
+    h2El.textContent = (`Welcome, ${name}`);
+    welcomeEl.appendChild(h2El);
+  }
+}
+renderWelcome();
+
+//Pull down user object from localstorage
+var userProfile = JSON.parse(localStorage.getItem('locallyStoredUser'));
+
+//Transform user object values to boolean to match resource values
+var userAllWomen = userProfile.gender === 'female' ? true : false;
+var userAllMen = userProfile.gender === 'male' ? true : false;
+var userMenOverSixty = userProfile.gender === 'male' && userProfile.age ===   '59-and-over' ? true : false;
+var userHasChildren = userProfile.children === true ? true : false;
+var userOverEighteen = userProfile.age === 'under-18' ? true : false;
+
+//Populate array of resources for user
+var userResources = [];
+
+
 
 var resources = [];
 //constructor function to create resource objects
@@ -25,7 +57,7 @@ function Resource(name, url, phone, address, description, shelter, food, drugAlc
   resources.push(this);
 }
 
-//~~~~~~~~~~Resource Object Creations Live here~~~~~~~~~~//
+//~~~~~~~~~~Resource Object Instances Live here~~~~~~~~~~//
 //Shelter Resources
 
 new Resource ('Bread of Life Mission Shelter', 'breadoflifemission.org', '(206) 682-3579 x100', '97 S. Main St.', 'Shelter with meals and no maximum length of stay for homeless men, 18 and older. Accepts offenders and sex offenders. Documents Required: valid photo ID. $5 per night.', true, true, false, false, false, false, true, true, false, true);
@@ -108,10 +140,10 @@ new Resource('Evergreen Treatment Services','evergreentx.org/medication-assisted
 new Resource('211','win211.org', '211', false, 'Washington 211 exists to make people’s lives better; to enhance community resiliency; to identify and break cycles of need, and to help organizations, foundations, businesses, individuals and government more efficiently distribute resources.', true, true, true, true, true, true, true, true, true);
 
 
-function listAllResources() {
-  for(var i = 0; i < resources.length; i++) {
-    console.log(resources[i]);
-  }
-}
+// function listAllResources() {
+//   for(var i = 0; i < resources.length; i++) {
+//     console.log(resources[i]);
+//   }
+// }
 
-listAllResources();
+// listAllResources();
