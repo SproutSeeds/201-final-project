@@ -1,13 +1,9 @@
-* {
-    box-sizing: border-box;
-
-    
-}
 i {
     visibility: hidden;
 }
 /* This sets the float property to each column */
 [class*="col-"] {
+    box-sizing: border-box;
     float: right;
     padding: 25px;
     /* border: 1px solid red; */
