@@ -19,11 +19,12 @@ i {
 body, html {
     height: 100%;
     margin: 0;
+    margin-bottom: -330px;
     background-color: black;
 }
 /* Background Creation */
 .bg {
-    background-image: url("../img/background.jpg");
+    background-image: url("../img/signpost.jpg");
     height: 100%; 
     background-position: center;
     background-repeat: no-repeat;
@@ -36,20 +37,36 @@ body, html {
 }
 /* Nav Bar Creation */
 header {
-    background-color: black;
+    background-color: white;
     opacity: 0.7;
+}
+
+footer {
+    background-color: white;
+    opacity: 0.7;
+    font-weight: bold;
+    font-size: 10 em;
+    position: relative;
+    text-align: center;
 }
 .col-1 {
     width: 10%;
-    color: white;
+    color: black;
 }
 .col-2 {
     width: 10%;
-    color: white;
+    color: black;
 }
 .col-3 {
+    width: 30%;
+    color: black;
+    font-size: 5em;
+    float: left;
+}
+
+.col-4 {
     width: 10%;
-    color: white;
+    float: right;
 }
     
 @media (max-width: 1407px) {
@@ -129,4 +146,14 @@ header {
     bottom: 0vw;
     left: 0vw;
     position: absolute;
+}
+=======
+.homepage-center {
+    display: grid;
+    width: 50%;
+    grid-template-columns: 1fr 1fr;
+}
+
+h1 {
+    font-family: 'Architects Daughter', cursive;
 }
