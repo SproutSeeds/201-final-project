@@ -1,3 +1,10 @@
+/* TESTING */
+#welcome {
+  font-size: 20px;
+  color: red;
+}
+
+/* get-started Form */
 .form-container {
   max-width: 300px;
   padding: 10px 20px;
@@ -19,16 +26,6 @@
   display: block;
   margin-bottom: 8px;
 }
-/* These inputs can be added if necessary */
-/* .form-container input[type="text"],
-.form-container input[type="date"],
-.form-container input[type="datetime"],
-.form-container input[type="gender"],
-.form-container input[type="number"],
-.form-container input[type="search"],
-.form-container input[type="time"],
-.form-container input[type="url"],
-.form-container textarea, */
 .form-container select {
   font-family: Helvetica, sans-serif;
   background: rgba(255,255,255,.1);
@@ -48,15 +45,6 @@
   box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
   margin-bottom: 30px;  
 }
-/* .form-container input[type="text"]:focus,
-.form-container input[type="date"]:focus,
-.form-container input[type="datetime"]:focus,
-.form-container input[type="gender"]:focus,
-.form-container input[type="number"]:focus,
-.form-container input[type="search"]:focus,
-.form-container input[type="time"]:focus,
-.form-container input[type="url"]:focus,
-.form-container textarea:focus, */
 .form-container select:focus {
   background: #d2d9dd;
 }
@@ -67,7 +55,6 @@
 
 /* ---- 1 AND 2 NUMBER BUBBLES ----  */
 .form-container .number {
-  /* background: #1abc9c; */
   background: #6ea0c4; /* Color of 1 and 2 bubbles */
   color: #fff;
   height: 30px;

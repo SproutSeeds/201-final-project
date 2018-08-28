@@ -2,6 +2,7 @@
 
 var entryForm = document.getElementById('new-user-form');
 var users = [];
+var divEl = document.getElementById('welcome');
 
 function User(name, gender, age, children, shelter, drugAlcohol, food, mentalTherapy) {
   this.name = name;
@@ -41,12 +42,11 @@ function handleSubmit(event) {
   var mentalHealth = mentalHealthEl.checked ? true : false;
 
   //Confirm that Erin stores the username in localStorage as 'username'
-  var name = localStorage.getItem('username');
+  var name = JSON.parse(localStorage.getItem('username')); //This is optional, if we don't want to construct with name
   var newUser = new User(name, gender, age, children, shelter, drugAlch, food, mentalHealth);
   users.push(newUser);
 
   setLocalStorage(newUser);
-  retreiveLocalStorage();//TESTING: This function call is placed here for testing purposes only.
 }
 
 //This function adds a user object to localStorage under the key "locallyStoredUser"
@@ -55,10 +55,11 @@ function setLocalStorage(user) {
 }
 
 //This function retreives all the form info from local storage and makes a new User object that we can work with.
-function retreiveLocalStorage() {
+function retrieveLocalStorage() {
   var retreivedUserInfo = JSON.parse(localStorage.getItem('locallyStoredUser')); //Set new var to parsed local data
 
   //obtain all property values
+  var name = JSON.parse(localStorage.getItem('username'));
   var gender = retreivedUserInfo.gender;
   var age = retreivedUserInfo.age;
   var children = retreivedUserInfo.children;
@@ -68,6 +69,23 @@ function retreiveLocalStorage() {
   var mentalHealth = retreivedUserInfo.mentalTherapy;
 
   //We will probably want to return this newUserObj at the end of function
-  var newUserObj = new User('localTest', gender, age, children, shelter, drugAlch, food, mentalHealth);//create a new User object
+  var newUserObj = new User(name, gender, age, children, shelter, drugAlch, food, mentalHealth);//create a new User object
   users.push(newUserObj);
 }
+
+function renderWelcome() {
+  var name = JSON.parse(localStorage.getItem('username'));
+
+  var h2El = document.createElement('li');
+
+  h2El.textContent = 'Welcome ' + name;
+
+  divEl.appendChild(h2El);
+
+  console.log('Inside the renderWelcome() function');
+  console.log(h2El.textContent);
+}
+
+//Main
+
+renderWelcome();
