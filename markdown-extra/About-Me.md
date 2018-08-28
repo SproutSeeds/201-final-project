@@ -1,2 +1,2 @@
 #Cody About Me
-I am a software developer that specializes in responsive front-end design and database management. Whether it be to manage a team of many, or manage only myself, everything I do and live for pertains to the greater vision of the whole I am a part of. Everyday through work and play, I strive to keep my mind empty, allowing the adaptation of newfound knowledge. 
+Cody is a software developer that specializes in responsive front-end design and database management. Whether it be to manage a team of many, or manage only myself, everything I do and live for pertains to the greater vision of the whole I am a part of. Everyday through work and play, he strives to keep his mind empty, allowing the adaptation of newfound knowledge. 

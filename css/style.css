@@ -1,5 +1,8 @@
-i {
-    visibility: hidden;
+/* Nav Bar Creation */
+header {
+    background-color: white;
+    opacity: 0.7;
+    height: 10vw;
 }
 
 nav {
@@ -13,7 +16,6 @@ a:link {
     color: white;
     text-decoration: none;
 }
-
 
 a:visited {
     color: white;
@@ -42,11 +44,10 @@ div.my-results-link:hover, div.about-us-link:hover {
     width: 1vw;
 }
 
-
 body, html {
     height: 100vw;
-    margin-bottom: -80vw;
-    background-color: black;
+    /* margin-bottom: -80vw; */
+    /* background-color: black; */
     font-family: 'Roboto', sans-serif;
 }
 /* Background Creation */
@@ -54,20 +55,16 @@ body, html {
     background-image: url("../img/woodfence.jpg");
     height: 100vw; 
     background-position: center;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-size: cover;
+    position: relative;
 }
 
 .fade-in{
     background-color: black;
     opacity: 1;
 }
-/* Nav Bar Creation */
-header {
-    background-color: white;
-    opacity: 0.7;
-    height: 10vw;
-}
+
 
 footer {
     position: fixed;
@@ -82,6 +79,7 @@ footer {
     height: 80px;
 }
 
+
 @media (max-width: 860px) {
      .homepage-center {
         display: block;
@@ -90,40 +88,62 @@ footer {
 
 .main-about-us {
     width: 61vw;
-    margin: 2vw auto;
+    height: 36.40vw;
+    margin: 3.5vw auto;
     background-color: whitesmoke;
-    opacity: 0.7;
+    opacity: .7;
     color: black;
-    position: relative;
+    position: relative; 
 }
 
-/* #erin-div {
-    top: .5vw;
-    left: .5vw;
-    position: absolute;
-} */
+
 #erin-image {
     width: 12vw;
     height: 12vw;
+}
+#erin-text {
     position: absolute;
+    top: 0vw;
+    left: 13vw;
+    width: 25vw;
+    margin: 1vw;
+    padding: 1vw;
+    line-height: 1.2vw;
+    font-size: 1.2vw;
 }
 
 #jeff-image {
     width: 12vw;
     height: 12vw;
-    top: 15vw;
-    right: 0vw;
+    margin: 0vw 0vw 0vw 49vw;
+}
+#jeff-text {
     position: absolute;
+    top: 12vw;
+    right: 11vw;
+    width: 25vw;
+    margin: 1vw;
+    padding: 1vw;
+    line-height: 1.2vw;
+    font-size: 1.2vw;
 }
 
 #cody-image {
     width: 12vw;
-    height: 12vw;
-    bottom: 0vw;
-    left: 0vw;
+    height: 12vw; 
+}
+#cody-text {
     position: absolute;
+    bottom: .5vw;
+    left: 13vw;
+    width: 25vw;
+    margin: 1vw;
+    padding: 1vw;
+    line-height: 1.2vw;
+    font-size: 1.2vw;
 }
 
+/* Landing Page Styling */
 .intro-text {
     position: relative;
     float: left;
@@ -136,7 +156,6 @@ footer {
     border-radius: 5px;
     line-height: 1.5;
 }
-
 
 .form-container {
     position: relative;
