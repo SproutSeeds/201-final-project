@@ -1,4 +1,4 @@
-/* Nav Bar Creation */
+/* Nav Bar */
 header {
     background-color: white;
     opacity: 0.7;
@@ -44,12 +44,16 @@ div.my-results-link:hover, div.about-us-link:hover {
     width: 1vw;
 }
 
+/* General body formatting */
 body, html {
     height: 100vw;
-    /* margin-bottom: -80vw; */
-    /* background-color: black; */
     font-family: 'Roboto', sans-serif;
 }
+
+.hidden {
+    display: none;
+}
+
 /* Background Creation */
 .bg {
     background-image: url("../img/woodfence.jpg");
@@ -65,6 +69,7 @@ body, html {
     opacity: 1;
 }
 
+/* Footer */
 
 footer {
     position: fixed;
@@ -79,6 +84,7 @@ footer {
     height: 80px;
 }
 
+/* Responsive Layout */
 
 @media (max-width: 860px) {
      .homepage-center {
@@ -86,6 +92,7 @@ footer {
     }
 }
 
+/* About Us Page */
 .main-about-us {
     width: 61vw;
     height: 39vw;
@@ -95,7 +102,6 @@ footer {
     position: relative; 
     /* background-color: white; */
 }
-
 
 #erin-image {
     height: 12vw;
