@@ -53,7 +53,7 @@ body, html {
 /* Background Creation */
 .bg {
     background-image: url("../img/woodfence.jpg");
-    height: 100vw; 
+    height: 100%; 
     background-position: center;
     background-repeat: repeat;
     background-size: cover;
@@ -193,3 +193,19 @@ input {
     margin: 1vw auto;
     font-size: 1vw;
 }
+
+/* My Results Page Styling */
+
+#results {
+    width: 80vw;
+    margin: 1vw auto;
+    background-color: whitesmoke;
+    padding: 2vw;
+    font-size: 1.5vw;
+    line-height: 3vw;
+}
+
+li {
+    margin-bottom: 2vw;
+}
+

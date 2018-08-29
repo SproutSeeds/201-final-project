@@ -1,6 +1,7 @@
 'use strict';
 
 var welcomeEl = document.getElementById('welcome');
+var resourceList = document.getElementById('results');
 
 var resources = [];
 var userResources = [];
@@ -92,8 +93,26 @@ function removeUserResourcesDupes(){
   }
 }
 
-// var uniqueUserResources = userResources.filter();
+//Render list of resources on page
 
+function renderResourceList() {
+  for (var i = 0; i < userResources.length; i++){
+    var liEl = document.createElement('li');
+    if (userResources[i].address === false){
+      userResources[i].address = 'Not Available';
+    }
+    if (userResources[i].phone === false) {
+      userResources[i].phone = 'Not Available';
+    }
+    liEl.innerHTML = `${userResources[i].name} | https://www.${userResources[i].url}<br>Phone: ${userResources[i].phone} | Address: ${userResources[i].address}`;
+
+    resourceList.appendChild(liEl);
+  }
+}
+// var trEl = document.createElement('tr');
+//   var tdEl = document.createElement('td');
+//   tdEl.textContent = this.name;
+//   trEl.appendChild(tdEl);
 
 //constructor function to create resource objects
 function Resource(name, url, phone, address, description, shelter, food, drugAlcohol, mentalTherapy, women, men, menOverSixty, hasChildren, overEighteen) {
@@ -208,6 +227,7 @@ compareUserResources();
 console.log(userResources);
 removeUserResourcesDupes();
 console.log(userResources);
+renderResourceList();
 
 
 
