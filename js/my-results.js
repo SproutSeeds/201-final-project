@@ -1,10 +1,27 @@
 'use strict';
 
+// Declare global variables
 var welcomeEl = document.getElementById('welcome');
 var resourceList = document.getElementById('results');
+var expansionEl = document.getElementById('expansion-icon');
 
+//Declare icon variables 
+
+var shelterIcon = '<i class="fas fa-home" title="Shelter" alt="shelter icon"></i>';
+var foodIcon = '<i class="fas fa-utensils" title="Food" alt="food icon"></i>';
+var drugAlcoholIcon = '<i class="fas fa-prescription-bottle-alt" title="Drug and Alcohol Treatment" alt="drug and alcohol treatment icon"></i>';
+var mentalTherapyIcon = '<i class="fas fa-brain" title="Mental Health Therapy" alt="mental health therapy icon"></i>';
+var allWomenIcon = '<i class="fas fa-venus" title="Serves Women" alt="serves women icon"></i>';
+var allMenIcon = '<i class="fas fa-mars" title="Serves Men" alt="serves women icon"></i>';
+var hasChildrenIcon = '<i class="fas fa-child" title="Allows Children" alt="allows children icon"></i>';
+var expansionIcon = '<i class="fas fa-plus" title="More Information" alt="more information icon"></i>';
+
+//Empty array to hold all resource objects
 var resources = [];
+
+//Empty array to hold all resource objects that match the user's specifications
 var userResources = [];
+
 
 //Render Welcome Message
 function renderWelcome() {
@@ -19,7 +36,6 @@ function renderWelcome() {
     welcomeEl.appendChild(h2El);
   }
 }
-
 
 //Pull down user object from localstorage
 var userProfile = JSON.parse(localStorage.getItem('locallyStoredUser'));
@@ -52,7 +68,6 @@ var userFood = userProfile.food;
 
 //Populate array of resources for user
 
-
 function compareUserResources () {
   for (var i = 0; i < resources.length; i++){
     console.log('in the for loop');
@@ -79,7 +94,6 @@ function compareUserResources () {
   }
 }
 
-
 //Removing duplicates from array of user resources
 function removeUserResourcesDupes(){
   for (var i = 0; i < userResources.length; i++){
@@ -97,6 +111,8 @@ function removeUserResourcesDupes(){
 
 function renderResourceList() {
   for (var i = 0; i < userResources.length; i++){
+    var resourceName = userResources[i].name;
+
     var liEl = document.createElement('li');
     if (userResources[i].address === false){
       userResources[i].address = 'Not Available';
@@ -104,15 +120,37 @@ function renderResourceList() {
     if (userResources[i].phone === false) {
       userResources[i].phone = 'Not Available';
     }
-    liEl.innerHTML = `${userResources[i].name} | https://www.${userResources[i].url}<br>Phone: ${userResources[i].phone} | Address: ${userResources[i].address}`;
+    liEl.innerHTML = `${userResources[i].name} | https://www.${userResources[i].url} <span id="expansion-icon" title=${resourceName}>${expansionIcon}</span> <br>Phone: ${userResources[i].phone} | Address: ${userResources[i].address}<br>`;
+
+
+    var iconEl = document.createElement('li');
+
+    for(var j = 0; j < userResources[i].icons.length; j++) {
+      iconEl.innerHTML += userResources[i].icons[j];
+    }
+
+    liEl.appendChild(iconEl);
 
     resourceList.appendChild(liEl);
   }
 }
-// var trEl = document.createElement('tr');
-//   var tdEl = document.createElement('td');
-//   tdEl.textContent = this.name;
-//   trEl.appendChild(tdEl);
+
+//Show resource description event
+// var descriptionEl = resource.description
+// descriptionEl.classList.add('hidden');
+
+// expansionEl.addEventListener('click', handleExpansionEvent);
+
+// function handleExpansionEvent(event) {
+  
+//   for(var i = 0; i < userResources.length; i++){
+//     if(event.target.title === userResources[i].name){
+
+//       expansionEl.classList.add('hidden');
+//       descriptionEl.classList.remove('hidden');
+//     }
+//   }
+// }
 
 //constructor function to create resource objects
 function Resource(name, url, phone, address, description, shelter, food, drugAlcohol, mentalTherapy, women, men, menOverSixty, hasChildren, overEighteen) {
@@ -132,10 +170,38 @@ function Resource(name, url, phone, address, description, shelter, food, drugAlc
   this.menOverSixty = menOverSixty;
   this.hasChildren = hasChildren;
   this.overEighteen = overEighteen;
+  this.icons = [];
 
   //Pushing into resources array
   resources.push(this);
 }
+
+//Identify necessary icons for each object so that it can be added to the object
+
+Resource.prototype.setIcons = function() {
+  if(this.shelter === true){
+    this.icons.push(shelterIcon);
+  }
+  if(this.food === true) {
+    this.icons.push(foodIcon);
+  }
+  if(this.drugAlcohol === true) {
+    this.icons.push(drugAlcoholIcon);
+  }
+  if(this.mentalTherapy === true) {
+    this.icons.push(mentalTherapyIcon);
+  }
+  if(this.allWomen === true) {
+    this.icons.push(allWomenIcon);
+  }
+  if(this.allMen === true) {
+    this.icons.push(allMenIcon);
+  }
+  if(this.hasChildren === true) {
+    this.icons.push(hasChildrenIcon);
+  }
+};
+
 
 //~~~~~~~~~~Resource Object Instances Live here~~~~~~~~~~//
 //Shelter Resources
@@ -222,19 +288,12 @@ new Resource('211','win211.org', '211', false, 'Washington 211 exists to make pe
 
 //Call functions
 renderWelcome();
+for(var i =0; i < resources.length; i++){
+  resources[i].setIcons();
+}
 console.log(resources);
 compareUserResources();
 console.log(userResources);
 removeUserResourcesDupes();
 console.log(userResources);
 renderResourceList();
-
-
-
-// function listAllResources() {
-//   for(var i = 0; i < resources.length; i++) {
-//     console.log(resources[i]);
-//   }
-// }
-
-// listAllResources();
