@@ -3,7 +3,7 @@
 // Declare global variables
 var welcomeEl = document.getElementById('welcome');
 var resourceList = document.getElementById('results');
-var expansionEl = document.getElementById('expansion-icon');
+
 
 //Declare icon variables 
 
@@ -14,7 +14,7 @@ var mentalTherapyIcon = '<i class="fas fa-brain" title="Mental Health Therapy" a
 var allWomenIcon = '<i class="fas fa-venus" title="Serves Women" alt="serves women icon"></i>';
 var allMenIcon = '<i class="fas fa-mars" title="Serves Men" alt="serves women icon"></i>';
 var hasChildrenIcon = '<i class="fas fa-child" title="Allows Children" alt="allows children icon"></i>';
-var expansionIcon = '<i class="fas fa-plus" title="More Information" alt="more information icon"></i>';
+
 
 //Empty array to hold all resource objects
 var resources = [];
@@ -112,7 +112,7 @@ function removeUserResourcesDupes(){
 function renderResourceList() {
   for (var i = 0; i < userResources.length; i++){
     var resourceName = userResources[i].name;
-
+    var expansionIcon = `<i class="fas fa-plus expansion-icon" alt="more information icon" title="${resourceName}"></i>`;
     var liEl = document.createElement('li');
     if (userResources[i].address === false){
       userResources[i].address = 'Not Available';
@@ -120,8 +120,7 @@ function renderResourceList() {
     if (userResources[i].phone === false) {
       userResources[i].phone = 'Not Available';
     }
-    liEl.innerHTML = `${userResources[i].name} | https://www.${userResources[i].url} <span id="expansion-icon" title=${resourceName}>${expansionIcon}</span> <br>Phone: ${userResources[i].phone} | Address: ${userResources[i].address}<br>`;
-
+    liEl.innerHTML = `${userResources[i].name} | https://www.${userResources[i].url} <div id="expansion-icon-container" title="${resourceName}">${expansionIcon}</div> <br>Phone: ${userResources[i].phone} | Address: ${userResources[i].address}<br><div class="description hidden" id="description-${i}">${userResources[i].description}</div>`;
 
     var iconEl = document.createElement('li');
 
@@ -132,25 +131,11 @@ function renderResourceList() {
     liEl.appendChild(iconEl);
 
     resourceList.appendChild(liEl);
+    // document.getElementById('expansion-icon').setAttribute('title', userResources[i].name);
   }
 }
 
-//Show resource description event
-// var descriptionEl = resource.description
-// descriptionEl.classList.add('hidden');
 
-// expansionEl.addEventListener('click', handleExpansionEvent);
-
-// function handleExpansionEvent(event) {
-  
-//   for(var i = 0; i < userResources.length; i++){
-//     if(event.target.title === userResources[i].name){
-
-//       expansionEl.classList.add('hidden');
-//       descriptionEl.classList.remove('hidden');
-//     }
-//   }
-// }
 
 //constructor function to create resource objects
 function Resource(name, url, phone, address, description, shelter, food, drugAlcohol, mentalTherapy, women, men, menOverSixty, hasChildren, overEighteen) {
@@ -291,9 +276,29 @@ renderWelcome();
 for(var i =0; i < resources.length; i++){
   resources[i].setIcons();
 }
-console.log(resources);
+
 compareUserResources();
-console.log(userResources);
 removeUserResourcesDupes();
-console.log(userResources);
 renderResourceList();
+
+//Show resource description event
+var expansionEl = document.getElementsByClassName('expansion-icon');
+console.log(expansionEl);
+for(var j = 0; j < expansionEl.length; j++){
+  expansionEl[j].addEventListener('click', handleExpansionEvent);
+}
+// console.log(expansionEl);
+
+function handleExpansionEvent(event) {
+  console.log(event.target.title);
+  for(var i = 0; i < userResources.length; i++){
+    if(event.target.title === userResources[i].name){
+      expansionEl[i].classList.add('hidden');
+      console.log(expansionEl);
+      document.getElementById(`description-${i}`).classList.remove('hidden');
+    }
+  }
+}
+
+
+

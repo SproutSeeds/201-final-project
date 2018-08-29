@@ -5,7 +5,7 @@ console.log(nameSubmit);
 nameSubmit.addEventListener('submit', nameFormSubmission, false);
 
 function nameFormSubmission(event) {
-  event.preventDefault(); //Jeff - Moved this to the top of the function
+  event.preventDefault();
   var formName = event.target.name.value;
   console.log(formName);
   localStorage.setItem('username', JSON.stringify(formName));
