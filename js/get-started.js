@@ -2,7 +2,7 @@
 
 var entryForm = document.getElementById('new-user-form');
 var users = [];
-var divEl = document.getElementById('welcome');
+var welcomeEl = document.getElementById('welcome');
 
 function User(name, gender, age, children, shelter, drugAlcohol, food, mentalTherapy) {
   this.name = name;
@@ -15,6 +15,20 @@ function User(name, gender, age, children, shelter, drugAlcohol, food, mentalThe
   this.mentalTherapy = mentalTherapy;
 
   // users.push(this);//moved this to the event handler
+}
+
+//Render Welcome Message
+function renderWelcome() {
+  var name = JSON.parse(localStorage.getItem('username'));
+  var h2El = document.createElement('h2');
+
+  if(name === null){
+    h2El.textContent = 'Welcome';
+    welcomeEl.appendChild(h2El);
+  } else {
+    h2El.textContent = (`Welcome, ${name}`);
+    welcomeEl.appendChild(h2El);
+  }
 }
 
 //Listener for submit form
@@ -47,6 +61,8 @@ function handleSubmit(event) {
   users.push(newUser);
 
   setLocalStorage(newUser);
+
+  window.location = 'my-results.html';
 }
 
 //This function adds a user object to localStorage under the key "locallyStoredUser"
