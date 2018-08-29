@@ -89,59 +89,59 @@ footer {
 
 .main-about-us {
     width: 61vw;
-    height: 36.40vw;
-    margin: 3.5vw auto;
-    background-color: whitesmoke;
-    opacity: .7;
+    height: 39vw;
+    margin: 3vw auto;
+    opacity: 1;
     color: black;
     position: relative; 
+    /* background-color: white; */
 }
 
 
 #erin-image {
-    width: 12vw;
     height: 12vw;
 }
 #erin-text {
     position: absolute;
     top: 0vw;
-    left: 13vw;
+    left: 16vw;
     width: 25vw;
-    margin: 1vw;
+    margin: .5vw;
     padding: 1vw;
     line-height: 1.2vw;
     font-size: 1.2vw;
+    background-color: bisque;
 }
 
 #jeff-image {
-    width: 12vw;
     height: 12vw;
-    margin: 0vw 0vw 0vw 49vw;
+    margin: 0vw 0vw 0vw 53vw;
 }
 #jeff-text {
     position: absolute;
-    top: 12vw;
-    right: 11vw;
+    top: 12.3vw;
+    right: 8vw;
     width: 25vw;
-    margin: 1vw;
+    margin: .5vw;
     padding: 1vw;
     line-height: 1.2vw;
     font-size: 1.2vw;
+    background-color: rgb(243, 184, 113);
 }
 
 #cody-image {
-    width: 12vw;
-    height: 12vw; 
+    height: 12vw;
 }
 #cody-text {
     position: absolute;
-    bottom: .5vw;
-    left: 13vw;
+    bottom: 2.5vw;
+    left: 16vw;
     width: 25vw;
-    margin: 1vw;
+    margin: .5vw;
     padding: 1vw;
     line-height: 1.2vw;
     font-size: 1.2vw;
+    background-color: rgb(244, 213, 101);
 }
 
 /* Landing Page Styling */
