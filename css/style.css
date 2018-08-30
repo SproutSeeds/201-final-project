@@ -75,7 +75,7 @@ body {
 
 /* Footer */
 
-footer {
+/* footer {
     position: fixed;
     width: 100vw;
     bottom: 0;
@@ -86,7 +86,7 @@ footer {
     text-align: center;
     line-height: 5vw;
     height: 60px;
-}
+} */
 
 /* Responsive Layout */
 
@@ -210,7 +210,7 @@ h2 {
 
 #results {
     width: 80vw;
-    margin: 1vw auto;
+    margin: 0 auto;
     background-color: whitesmoke;
     padding: 2vw;
     font-size: 1.5vw;
@@ -401,4 +401,63 @@ li {
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
+}
+/* =============================================
+        Erin Edits CSS Wednesday
+============================================= */
+.browser-icons {
+    height: 4vw;
+    float: left;
+    margin: 5vw 5vw 20vw 5vw;
+ }
+ 
+ .clear-storage-button {
+    float: left;
+ }
+
+ footer {
+    position: absolute;
+    width: 100vw;
+    bottom: 0%;
+    background-color: white;
+    opacity: 0.7;
+    font-weight: bold;
+    font-size: 2vw;
+    text-align: center;
+    line-height: 7vh;
+    height: 8vh;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+ }
+
+ #index-footer {
+    position: absolute;
+    width: 100vw;
+    bottom: 0%;
+    background-color: white;
+    opacity: 0.7;
+    font-weight: bold;
+    font-size: 2vw;
+    text-align: center;
+    line-height: 7vh;
+    height: 8vh;
+    right: 0;
+    left: 0;
+    margin: -81vh auto;
+ }
+#about-us-footer {
+    position: absolute;
+    width: 100vw;
+    bottom: 0%;
+    background-color: white;
+    opacity: 0.7;
+    font-weight: bold;
+    font-size: 2vw;
+    text-align: center;
+    line-height: 7vh;
+    height: 8vh;
+    right: 0;
+    left: 0;
+    margin: -6vh auto;
 }
