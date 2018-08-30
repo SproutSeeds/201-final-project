@@ -89,18 +89,18 @@ function retrieveLocalStorage() {
   users.push(newUserObj);
 }
 
-function renderWelcome() {
-  var name = JSON.parse(localStorage.getItem('username'));
+// function renderWelcome() {
+//   var name = JSON.parse(localStorage.getItem('username'));
 
-  var h2El = document.createElement('li');
+//   var h2El = document.createElement('li');
 
-  h2El.textContent = 'Welcome ' + name;
+//   h2El.textContent = 'Welcome ' + name;
 
-  divEl.appendChild(h2El);
+//   welcomeEl.appendChild(h2El);
 
-  console.log('Inside the renderWelcome() function');
-  console.log(h2El.textContent);
-}
+//   console.log('Inside the renderWelcome() function');
+//   console.log(h2El.textContent);
+// }
 
 //Main
 

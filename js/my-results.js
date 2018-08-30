@@ -5,7 +5,7 @@ var welcomeEl = document.getElementById('welcome');
 var resourceList = document.getElementById('results');
 
 
-//Declare icon variables 
+//Declare icon variables
 
 var shelterIcon = '<i class="fas fa-home" title="Shelter" alt="shelter icon"></i>';
 var foodIcon = '<i class="fas fa-utensils" title="Food" alt="food icon"></i>';
@@ -70,11 +70,10 @@ var userFood = userProfile.food;
 
 function compareUserResources () {
   for (var i = 0; i < resources.length; i++){
-    console.log('in the for loop');
     if (userShelter === true && resources[i].shelter === true) {
       if ((userAllWomen === resources[i].allWomen && userHasChildren === resources[i].hasChildren) || (userAllWomen === resources[i].allWomen && (userHasChildren === false && resources[i].hasChildren === true))){
         userResources.push(resources[i]);
-      } else if (userAllMen === resources[i].allMen){
+      } else if ((userAllMen === resources[i].allMen && userHasChildren === resources[i].hasChildren) || (userAllMen === resources[i].allMen && (userHasChildren === false && resources[i].hasChildren === true))){
         userResources.push(resources[i]);
       } else if (userMenOverSixty === resources[i].menOverSixty) {
         userResources.push(resources[i]);
@@ -99,7 +98,6 @@ function removeUserResourcesDupes(){
   for (var i = 0; i < userResources.length; i++){
     for (var j = i + 1; j < userResources.length; j++) {
       if(userResources[i].name === userResources[j].name){
-        console.log('before splice');
         userResources.splice(j, 1);
         j--;
       }
@@ -120,18 +118,19 @@ function renderResourceList() {
     if (userResources[i].phone === false) {
       userResources[i].phone = 'Not Available';
     }
-    liEl.innerHTML = `${userResources[i].name} | https://www.${userResources[i].url} <div id="expansion-icon-container" title="${resourceName}">${expansionIcon}</div> <br>Phone: ${userResources[i].phone} | Address: ${userResources[i].address}<br><div class="description hidden" id="description-${i}">${userResources[i].description}</div>`;
 
-    var iconEl = document.createElement('li');
-
+    var iconHyperText = '';
     for(var j = 0; j < userResources[i].icons.length; j++) {
-      iconEl.innerHTML += userResources[i].icons[j];
+      iconHyperText += userResources[i].icons[j];
     }
 
-    liEl.appendChild(iconEl);
+    liEl.innerHTML = `<h3 class="resource-name">${userResources[i].name}</h3> <a class="resource-links" href="http://www.${userResources[i].url}">http://www.${userResources[i].url}</a> <br>Phone: ${userResources[i].phone} | Address: ${userResources[i].address} <div>${iconHyperText}</div>
+
+    <div class="plus-expansion-description">
+       <div id="expansion-icon-container" title="${resourceName}">${expansionIcon}</div> <div class="description hidden" id="description-${i}">${userResources[i].description}</div> 
+    </div>`;
 
     resourceList.appendChild(liEl);
-    // document.getElementById('expansion-icon').setAttribute('title', userResources[i].name);
   }
 }
 
@@ -191,13 +190,11 @@ Resource.prototype.setIcons = function() {
 //~~~~~~~~~~Resource Object Instances Live here~~~~~~~~~~//
 //Shelter Resources
 
-new Resource ('Bread of Life Mission Shelter', 'breadoflifemission.org', '(206) 682-3579 x100', '97 S. Main St.', 'Shelter with meals and no maximum length of stay for homeless men, 18 and older. Accepts offenders and sex offenders. Documents Required: valid photo ID. $5 per night.', true, true, false, false, false, false, true, true, false, true);
+new Resource ('Bread of Life Mission Shelter', 'breadoflifemission.org', '(206) 682-3579 x100', '97 S. Main St.', 'Shelter with meals and no maximum length of stay for homeless men, 18 and older. Accepts offenders and sex offenders. Documents Required: valid photo ID. $5 per night.', true, true, false, false, true, true, true, false, true);
 
 new Resource ('Catholic Housing Services Women\'s Referral Center', 'ccsww.org', '(206) 441-3210', '2030 Third Ave., Angeline\'s Center', 'Sightly emergency shelter screening and referral for women, 18 and older. No children. Visit in person. Priority given to clients who arrive by 8 p.m. No fees.', true, false, false, false, true, true, false, false, true);
 
 new Resource ('Compass Housing Alliance Blaine Center', 'compasshousingalliance.org', '(206) 474-1000 / (206) 474-1600', '77 S. Washington St., Client Services', 'Overnight shelter with no limit to length, evening meal, breakfast,showers, limited storage, case management and referral services.Serves single men,18 and older. Visit Compass Client Services Office in person for intake. Most intake is done through case managerreferrals; self-referral space is very limited. $21 weekly.', true, true, false, false, false, true, true, false, true);
-
-new Resource ('Community Emergency Family Shelter Intake Line', false, '(206) 245 - 1026', false, 'Intake for emergency night shelter for pregnant women and families.', true, false, false, false, true, true, true, true, true);
 
 new Resource ('DESC', 'desc.org', '(206) 464-1570 x3033', '517 Third Ave.', 'Contact: 24 hours; intake: daily: 8 a.m. – 4:45 p.m.; shelter nightly: 4:45 p.m. – 7 a.m. Overnight emergency shelters. The main shelter offers onsite medical care, mental health counseling and substance usedisorder treatment. Serves women 18 and older, men 60 and older and anyone 18 and older who is vulnerable due to mental illness, developmental disability, substance use disorder and/or medical condition. Visit in person to register. Only professional referrals accepted after 5 p.m. Documents Required: documentation of disability or vulnerability may be required. No fees.', true, false, true, true, true, true, true, false, true);
 
@@ -283,18 +280,14 @@ renderResourceList();
 
 //Show resource description event
 var expansionEl = document.getElementsByClassName('expansion-icon');
-console.log(expansionEl);
 for(var j = 0; j < expansionEl.length; j++){
   expansionEl[j].addEventListener('click', handleExpansionEvent);
 }
-// console.log(expansionEl);
 
 function handleExpansionEvent(event) {
-  console.log(event.target.title);
   for(var i = 0; i < userResources.length; i++){
     if(event.target.title === userResources[i].name){
       expansionEl[i].classList.add('hidden');
-      console.log(expansionEl);
       document.getElementById(`description-${i}`).classList.remove('hidden');
     }
   }
