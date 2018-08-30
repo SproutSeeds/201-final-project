@@ -55,6 +55,10 @@ function handleSubmit(event) {
   var food = foodEl.checked ? true : false;
   var mentalHealth = mentalHealthEl.checked ? true : false;
 
+  if(!shelter && !drugAlch && !food && !mentalHealth) {
+    return alert('Please select at least one checkbox.');
+  }
+
   //Confirm that Erin stores the username in localStorage as 'username'
   var name = JSON.parse(localStorage.getItem('username')); //This is optional, if we don't want to construct with name
   var newUser = new User(name, gender, age, children, shelter, drugAlch, food, mentalHealth);
