@@ -1,3 +1,63 @@
+/* General formatting */
+body {
+    /* height: 100%; */
+    font-family: 'Roboto', sans-serif;
+    background-image: url("../img/woodfence.jpg");
+    background-repeat: repeat-y;
+    background-position: center;
+    position: relative;
+}
+
+.hidden {
+    display: none;
+}
+
+h1 {
+    font-family: 'Architects Daughter', cursive;
+    font-size: 5vw;
+}
+
+h2 {
+    font-family: 'Architects Daughter', cursive;
+    width: 50vw;
+    height: 8vh;
+    line-height: 4vw;
+    margin: 3vw auto;
+    font-size: 3vw;
+    color: black;
+    background-color: whitesmoke;
+    text-align: center;
+    border-radius: 5px;
+}
+
+h4 {
+    font-family: 'Architects Daughter', cursive;
+    font-size: 2vw;
+    margin-bottom: 2vh;
+}
+
+#clear-storage-button, #name-submit-button {
+    position: relative;
+    display: block;
+    padding: 19px 39px 18px 39px;
+    color: #FFF;
+    margin: 0 auto;
+    background: #ff7b00;
+    font-size: 18px;
+    text-align: center;
+    font-style: normal;
+    width: 20vw;
+    height: 7vh;
+    border: none;
+    border-width: 1px 1px 3px;
+    margin-bottom: 10px;
+    margin-top: 20px; /* added to push Submit button down */
+  }
+
+#clear-storage-button:hover, #name-submit-button:hover {
+    background: #FFAE64;
+  }
+
 /* Nav Bar */
 i {
     color: #DC3D24;
@@ -53,19 +113,6 @@ div.my-results-link:hover, div.about-us-link:hover {
     height: 5.5vw;
 }
 
-/* General body formatting */
-body {
-    /* height: 100%; */
-    font-family: 'Roboto', sans-serif;
-    background-image: url("../img/woodfence.jpg");
-    background-repeat: repeat-y;
-    background-position: center;
-    position: relative;
-}
-
-.hidden {
-    display: none;
-}
 
 /* Background Creation */
 
@@ -181,24 +228,6 @@ body {
 
 }
 
-h1 {
-    font-family: 'Architects Daughter', cursive;
-    font-size: 5vw;
-}
-
-h2 {
-    font-family: 'Architects Daughter', cursive;
-    width: 50vw;
-    height: 8vh;
-    line-height: 4vw;
-    margin: 3vw auto;
-    font-size: 3vw;
-    color: black;
-    background-color: whitesmoke;
-    text-align: center;
-    border-radius: 5px;
-}
-
 .landing-input {
     height: 2vw;
     width: 20vw;
@@ -234,12 +263,28 @@ li {
     font-style: italic;
 }
 
-
 .resource-links{
     color: rgb(0, 162, 255);
 }
 .resource-links:visited {
     color: rgb(0, 162, 255);
+}
+
+#privacy {
+    width: 80vw;
+    margin: 2vh auto;
+    background-color: #FFAE64;
+    padding: 2vw;
+    font-size: 1.5vw;
+    line-height: 2vw;
+    border-radius: 5px;
+}
+
+#privacy-list li {
+    list-style-type: disc;
+    margin-left: 3vw;
+    margin-bottom: 2vh;
+    margin-top: 2vh;
 }
 
 /* get-started Form */
@@ -331,7 +376,7 @@ li {
 }
 /* ADD IF CHANGING TO BUTTON: .form-container input[type="button"]:hover */
 .form-container input[type="submit"]:hover {
-  background: rgb(200, 115, 102);
+  background: #FFAE64;
 }
 
 /* ---- CUSTOM CHECKBOXES ---- */
@@ -405,14 +450,16 @@ li {
 /* =============================================
         Erin Edits CSS Wednesday
 ============================================= */
-.browser-icons {
-    height: 4vw;
-    float: left;
-    margin: 5vw 5vw 20vw 5vw;
+#browser-icon-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    height: 8vh;
+    padding: 1vh 2vw 1vh 2vw;
  }
  
- .clear-storage-button {
-    float: left;
+ .browser-icons {
+     height: 7vh;
+     margin: 2vh 5vh
  }
 
  footer {

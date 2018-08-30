@@ -37,33 +37,24 @@
             </header>
             <main>
                 <div id = "welcome"></div>
-                <div class = "form-container hidden">
-                    <form id = "name-form" action = "get-started.html">
-                        Please enter a name:<br>
-                        <input type = "text" id = "name"><br>
-                        <input type = "submit" id = "submit-button" value = "Submit">          
-                    </form>
-                </div>
                 <ul id = "results"></ul>
                 <div id = "privacy">
-                    <h3>Privacy Options</h3>
+                    <h4>Privacy Options</h3>
                     <p>You may want to clear the storage for this site if: </p>
-                    <ul>
+                    <ul id="privacy-list">
                         <li>Something has changed in your life and you want to resubmit your information</li>
                         <li>You are in an unsafe situation and you need to erase a record of your visit to this site</li>
                     </ul>
-                    <p>Click on the button to clear your information and follow the directions for the browser you are currently using to clear your browser history.</p>
+                    <p>Click on icon that corresponds to the browser you are currently using to be routed to instructions on how to clear your browser history.  Then, click the button to clear your information from this site.</p>
                     <div id="browser-icon-container">
-                    <ul>
-                        <li><a href="https://support.google.com/chrome/answer/95589?co=GENIE.Platform%3DDesktop&hl=en"> <img src = "img/browser-icons/chrome-icon.png" alt="Chrome" title="Chrome" class ="browser-icons"></a><li>
-                        <li><a href="https://support.mozilla.org/en-US/kb/delete-browsing-search-download-history-firefox"><img src="img/browser-icons/Firefox-icon.png" alt="Firefox" title="Firefox" class="browser-icons"></a></li>
-                        <li><a href="https://support.microsoft.com/en-us/help/17438/windows-internet-explorer-view-delete-browsing-history"><img src="img/browser-icons/Internet-Explorer-icon.png" alt="Internet Explorer" title="Internet Explorer" class="browser-icons"></a></li>
-                        <li><a href="https://support.apple.com/guide/safari/clear-your-browsing-history-sfri47acf5d6/mac"><img src="img/browser-icons/safari.png" alt="Safari" title="Safari" class="browser-icons"></a></li>
-                        <li><a href="https://www.opera.com/help/tutorials/security/sharing/"><img src="img/browser-icons/Opera-icon.png" alt="Opera" title="Opera" class="browser-icons"></a></li>
-                    </ul>
+                        <div><a href="https://support.google.com/chrome/answer/95589?co=GENIE.Platform%3DDesktop&hl=en"> <img src = "img/browser-icons/chrome-icon.png" alt="Chrome" title="Chrome" class ="browser-icons"></a></div>
+                        <div><a href="https://support.mozilla.org/en-US/kb/delete-browsing-search-download-history-firefox"><img src="img/browser-icons/Firefox-icon.png" alt="Firefox" title="Firefox" class="browser-icons"></a></div>
+                        <div><a href="https://support.microsoft.com/en-us/help/17438/windows-internet-explorer-view-delete-browsing-history"><img src="img/browser-icons/Internet-Explorer-icon.png" alt="Internet Explorer" title="Internet Explorer" class="browser-icons"></a></div>
+                        <div><a href="https://support.apple.com/guide/safari/clear-your-browsing-history-sfri47acf5d6/mac"><img src="img/browser-icons/safari.png" alt="Safari" title="Safari" class="browser-icons"></a></div>
+                        <div><a href="https://www.opera.com/help/tutorials/security/sharing/"><img src="img/browser-icons/Opera-icon.png" alt="Opera" title="Opera" class="browser-icons"></a></div>
                     </div>
                     <div id="clear-storage-button-container">
-                        <input type = "button" id="clear-storage-button" value="Clear My Information">
+                            <input type = "button" id="clear-storage-button" value="Clear My Information">
                     </div>
                 </div>
             </main>

@@ -3,7 +3,7 @@
 // Declare global variables
 var welcomeEl = document.getElementById('welcome');
 var resourceList = document.getElementById('results');
-var nameSubmit = document.getElementById('name-form');
+// var nameSubmit = document.getElementById('name-form');
 
 //Declare icon variables
 
