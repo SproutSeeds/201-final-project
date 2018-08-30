@@ -28,9 +28,9 @@ if(!localStorage.getItem('locallyStoredUser')) {
 //Render Welcome Message
 function renderWelcome() {
   var name = JSON.parse(localStorage.getItem('username'));
-  var h2El = document.createElement('h2');
+  var h2El = document.createElement('h5');
 
-  if(name === null){
+  if(!name){
     h2El.textContent = 'Welcome';
     welcomeEl.appendChild(h2El);
   } else {
