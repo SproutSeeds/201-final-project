@@ -76,7 +76,7 @@ body {
 /* Footer */
 
 footer {
-    position: fixed;
+    position: absolute;
     width: 100vw;
     bottom: 0;
     background-color: white;
@@ -84,15 +84,65 @@ footer {
     font-weight: bold;
     font-size: 2vw;
     text-align: center;
-    line-height: 5vw;
-    height: 60px;
+    line-height: 7vh;
+    height: 8vh;
 }
 
-/* Responsive Layout */
+/* Landing Page Styling */
+.intro-text {
+    position: relative;
+    float: left;
+    width: 40vw;
+    font-size: 2vw;
+    margin: 4vw;
+    padding: 3%;
+    background-color: whitesmoke;
+    opacity: 0.9;
+    border-radius: 5px;
+    line-height: 1.5;
+}
 
-@media (max-width: 860px) {
-     .homepage-center {
-        display: block;
+.form-container {
+    position: relative;
+    float: right;
+    width: 35vw;
+    margin: 8vw 4vw 4vw 3vw;
+    background-color: #DC3D24;
+    padding: 2%;
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2vw;
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Architects Daughter', cursive;
+    font-size: 5vw;
+}
+
+h2 {
+    font-family: 'Architects Daughter', cursive;
+    width: 50vw;
+    margin: 3vw auto;
+    font-size: 3vw;
+    color: black;
+    background-color: whitesmoke;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.landing-input {
+    height: 2vw;
+    width: 20vw;
+    margin: 1vw auto;
+    font-size: 1vw;
+}
+
+/* Responsive Layout on Landing Page*/
+
+@media all and (max-width: 860px) {
+     .intro-text .form-container {
+        float: left;
     }
 }
 
@@ -151,59 +201,6 @@ footer {
     line-height: 1.2vw;
     font-size: 1.2vw;
     background-color: rgb(244, 213, 101);
-}
-
-/* Landing Page Styling */
-.intro-text {
-    position: relative;
-    float: left;
-    width: 40vw;
-    font-size: 2vw;
-    margin: 4vw;
-    padding: 3%;
-    background-color: whitesmoke;
-    opacity: 0.9;
-    border-radius: 5px;
-    line-height: 1.5;
-}
-
-.form-container-landing {
-    position: relative;
-    float: right;
-    width: 35vw;
-    margin: 8vw 4vw 4vw 3vw;
-    background-color: #DC3D24;
-    padding: 2%;
-    border-radius: 5px;
-    font-family: 'Roboto', sans-serif;
-    font-size: 2vw;
-    text-align: center;
-
-}
-
-h1 {
-    font-family: 'Architects Daughter', cursive;
-    font-size: 5vw;
-}
-
-h2 {
-    font-family: 'Architects Daughter', cursive;
-    width: 50vw;
-    height: 8vh;
-    line-height: 4vw;
-    margin: 3vw auto;
-    font-size: 3vw;
-    color: black;
-    background-color: whitesmoke;
-    text-align: center;
-    border-radius: 5px;
-}
-
-.landing-input {
-    height: 2vw;
-    width: 20vw;
-    margin: 1vw auto;
-    font-size: 1vw;
 }
 
 /* My Results Page Styling */
@@ -402,3 +399,14 @@ li {
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
+
+.browser-icons {
+    height: 4vw;
+    float: left;
+    margin: 5vw 5vw 20vw 5vw;
+}
+
+.clear-storage-button {
+    float: left;
+}
+
