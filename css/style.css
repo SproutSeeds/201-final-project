@@ -75,8 +75,8 @@ body {
 
 /* Footer */
 
-footer {
-    position: absolute;
+/* footer {
+    position: fixed;
     width: 100vw;
     bottom: 0;
     background-color: white;
@@ -84,65 +84,15 @@ footer {
     font-weight: bold;
     font-size: 2vw;
     text-align: center;
-    line-height: 7vh;
-    height: 8vh;
-}
+    line-height: 5vw;
+    height: 60px;
+} */
 
-/* Landing Page Styling */
-.intro-text {
-    position: relative;
-    float: left;
-    width: 40vw;
-    font-size: 2vw;
-    margin: 4vw;
-    padding: 3%;
-    background-color: whitesmoke;
-    opacity: 0.9;
-    border-radius: 5px;
-    line-height: 1.5;
-}
+/* Responsive Layout */
 
-.form-container {
-    position: relative;
-    float: right;
-    width: 35vw;
-    margin: 8vw 4vw 4vw 3vw;
-    background-color: #DC3D24;
-    padding: 2%;
-    border-radius: 5px;
-    font-family: 'Roboto', sans-serif;
-    font-size: 2vw;
-    text-align: center;
-}
-
-h1 {
-    font-family: 'Architects Daughter', cursive;
-    font-size: 5vw;
-}
-
-h2 {
-    font-family: 'Architects Daughter', cursive;
-    width: 50vw;
-    margin: 3vw auto;
-    font-size: 3vw;
-    color: black;
-    background-color: whitesmoke;
-    text-align: center;
-    border-radius: 5px;
-}
-
-.landing-input {
-    height: 2vw;
-    width: 20vw;
-    margin: 1vw auto;
-    font-size: 1vw;
-}
-
-/* Responsive Layout on Landing Page*/
-
-@media all and (max-width: 860px) {
-     .intro-text .form-container {
-        float: left;
+@media (max-width: 860px) {
+     .homepage-center {
+        display: block;
     }
 }
 
@@ -203,11 +153,64 @@ h2 {
     background-color: rgb(244, 213, 101);
 }
 
+/* Landing Page Styling */
+.intro-text {
+    position: relative;
+    float: left;
+    width: 40vw;
+    font-size: 2vw;
+    margin: 4vw;
+    padding: 3%;
+    background-color: whitesmoke;
+    opacity: 0.9;
+    border-radius: 5px;
+    line-height: 1.5;
+}
+
+.form-container-landing {
+    position: relative;
+    float: right;
+    width: 35vw;
+    margin: 8vw 4vw 4vw 3vw;
+    background-color: #DC3D24;
+    padding: 2%;
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2vw;
+    text-align: center;
+
+}
+
+h1 {
+    font-family: 'Architects Daughter', cursive;
+    font-size: 5vw;
+}
+
+h2 {
+    font-family: 'Architects Daughter', cursive;
+    width: 50vw;
+    height: 8vh;
+    line-height: 4vw;
+    margin: 3vw auto;
+    font-size: 3vw;
+    color: black;
+    background-color: whitesmoke;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.landing-input {
+    height: 2vw;
+    width: 20vw;
+    margin: 1vw auto;
+    font-size: 1vw;
+}
+
 /* My Results Page Styling */
 
 #results {
     width: 80vw;
-    margin: 1vw auto;
+    margin: 0 auto;
     background-color: whitesmoke;
     padding: 2vw;
     font-size: 1.5vw;
@@ -399,14 +402,62 @@ li {
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
-
+/* =============================================
+        Erin Edits CSS Wednesday
+============================================= */
 .browser-icons {
     height: 4vw;
     float: left;
     margin: 5vw 5vw 20vw 5vw;
-}
-
-.clear-storage-button {
+ }
+ 
+ .clear-storage-button {
     float: left;
-}
+ }
 
+ footer {
+    position: absolute;
+    width: 100vw;
+    bottom: 0%;
+    background-color: white;
+    opacity: 0.7;
+    font-weight: bold;
+    font-size: 2vw;
+    text-align: center;
+    line-height: 7vh;
+    height: 8vh;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+ }
+
+ #index-footer {
+    position: absolute;
+    width: 100vw;
+    bottom: 0%;
+    background-color: white;
+    opacity: 0.7;
+    font-weight: bold;
+    font-size: 2vw;
+    text-align: center;
+    line-height: 7vh;
+    height: 8vh;
+    right: 0;
+    left: 0;
+    margin: -81vh auto;
+ }
+#about-us-footer {
+    position: absolute;
+    width: 100vw;
+    bottom: 0%;
+    background-color: white;
+    opacity: 0.7;
+    font-weight: bold;
+    font-size: 2vw;
+    text-align: center;
+    line-height: 7vh;
+    height: 8vh;
+    right: 0;
+    left: 0;
+    margin: -6vh auto;
+}
