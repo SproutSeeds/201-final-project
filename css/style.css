@@ -58,7 +58,7 @@ h4 {
     display: block;
     color: #FFF;
     margin: 0 auto;
-    background: #ff7b00;
+    background: rgb(244, 138, 38);
     font-size: 2vw;
     text-align: center;
     font-style: normal;
@@ -73,6 +73,7 @@ h4 {
 
 #clear-storage-button:hover, #name-submit-button:hover {
     background: #FFAE64;
+    cursor: pointer;
   }
 
 /* Nav Bar */
@@ -82,6 +83,7 @@ i {
 }
 .expansion-icon {
     color: black;
+    cursor: pointer;
 }
 header {
     background-color: white;
@@ -297,7 +299,7 @@ li {
     width: 82vw;
     margin: 1vh auto;
     padding-bottom: -1vh;
-    background-color: #FFAE64;
+    background-color: #DC3D24;
     padding: 1vw;
     font-size: 1.5vw;
     line-height: 2vw;
@@ -388,7 +390,7 @@ li {
   padding: 19px 39px 18px 39px;
   color: #FFF;
   margin: 0 auto;
-  background: rgb(211, 95, 77);
+  background: #DC3D24;
   font-size: 18px;
   text-align: center;
   font-style: normal;
@@ -397,6 +399,10 @@ li {
   border-width: 1px 1px 3px;
   margin-bottom: 10px;
   margin-top: 20px; /* added to push Submit button down */
+}
+#form-submit-button:hover {
+    cursor: pointer;
+    background-color:rgb(244, 138, 38);
 }
 /* ADD IF CHANGING TO BUTTON: .form-container input[type="button"]:hover */
 .form-container input[type="submit"]:hover {
