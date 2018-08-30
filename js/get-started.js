@@ -17,6 +17,14 @@ function User(name, gender, age, children, shelter, drugAlcohol, food, mentalThe
   // users.push(this);//moved this to the event handler
 }
 
+//Toggle "My Results" button in the nav depending on if localstorage is null
+
+if(!localStorage.getItem('locallyStoredUser')) {
+  document.getElementById('my-results-link').classList.add('hidden');
+} else {
+  document.getElementById('my-results-link').classList.add('unhidden');
+}
+
 //Render Welcome Message
 function renderWelcome() {
   var name = JSON.parse(localStorage.getItem('username'));
