@@ -13,12 +13,9 @@ function User(name, gender, age, children, shelter, drugAlcohol, food, mentalThe
   this.drugAlcohol = drugAlcohol;
   this.food = food;
   this.mentalTherapy = mentalTherapy;
-
-  // users.push(this);//moved this to the event handler
 }
 
 //Toggle "My Results" button in the nav depending on if localstorage is null
-
 if(!localStorage.getItem('locallyStoredUser')) {
   document.getElementById('my-results-link').classList.add('hidden');
 } else {
@@ -81,39 +78,5 @@ function handleSubmit(event) {
 function setLocalStorage(user) {
   localStorage.setItem('locallyStoredUser', JSON.stringify(user));
 }
-
-//This function retreives all the form info from local storage and makes a new User object that we can work with.
-function retrieveLocalStorage() {
-  var retreivedUserInfo = JSON.parse(localStorage.getItem('locallyStoredUser')); //Set new var to parsed local data
-
-  //obtain all property values
-  var name = JSON.parse(localStorage.getItem('username'));
-  var gender = retreivedUserInfo.gender;
-  var age = retreivedUserInfo.age;
-  var children = retreivedUserInfo.children;
-  var shelter = retreivedUserInfo.shelter;
-  var drugAlch = retreivedUserInfo.drugAlcohol;
-  var food = retreivedUserInfo.food;
-  var mentalHealth = retreivedUserInfo.mentalTherapy;
-
-  //We will probably want to return this newUserObj at the end of function
-  var newUserObj = new User(name, gender, age, children, shelter, drugAlch, food, mentalHealth);//create a new User object
-  users.push(newUserObj);
-}
-
-// function renderWelcome() {
-//   var name = JSON.parse(localStorage.getItem('username'));
-
-//   var h2El = document.createElement('li');
-
-//   h2El.textContent = 'Welcome ' + name;
-
-//   welcomeEl.appendChild(h2El);
-
-//   console.log('Inside the renderWelcome() function');
-//   console.log(h2El.textContent);
-// }
-
-//Main
 
 renderWelcome();
