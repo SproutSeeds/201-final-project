@@ -86,9 +86,10 @@ nav a:link {
 
 a:visited {
     color: white;
+    background-color: black;
 }
 
-div.my-results-link, div.about-us-link {
+div.my-results-link, div.about-us-link, .unhidden {
     font-family: 'Architects Daughter', cursive;
     font-size: 2vw;
     text-align: center;
@@ -194,7 +195,7 @@ div.my-results-link:hover, div.about-us-link:hover {
     left: 16vw;
     width: 25vw;
     margin: .5vw;
-    padding: 1vw;
+    padding: 1vw 1vw .5vw 1vw;
     line-height: 1.2vw;
     font-size: 1.2vw;
     background-color: rgb(244, 213, 101);

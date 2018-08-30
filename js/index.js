@@ -4,7 +4,7 @@
 if(localStorage.getItem('locallyStoredUser') === null) {
   document.getElementById('my-results-link').classList.add('hidden');
 } else {
-  document.getElementById('my-results-link').classList.remove('hidden');
+  document.getElementById('my-results-link').classList.add('unhidden');
 }
 
 //Event for submitting name
