@@ -229,6 +229,7 @@ footer {
 #erin-image {
     height: 12vw;
 }
+
 #erin-text {
     position: absolute;
     top: 0vw;
@@ -245,6 +246,9 @@ footer {
     height: 12vw;
     margin: .7vw 0vw 0vw 53vw;
 }
+/* #jeff-image:hover {
+    transform: scale(1.2);
+  } */
 #jeff-text {
     position: absolute;
     top: 12.3vw;
@@ -261,6 +265,7 @@ footer {
 #cody-image {
     height: 12vw;
 }
+
 
 #cody-text {
     position: absolute;
