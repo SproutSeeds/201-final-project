@@ -2,12 +2,10 @@
 body {
     font-family: 'Roboto', sans-serif;
     background-image: url("../img/woodfence.jpg");
-    /* background-color: antiquewhite; */
     background-repeat: repeat-y;
     background-position: center;
     position: relative;
 }
-
 
 .hidden {
     display: none;
@@ -58,7 +56,7 @@ h4 {
     display: block;
     color: #FFF;
     margin: 0 auto;
-    background: #ff7b00;
+    background: rgb(244, 138, 38);
     font-size: 2vw;
     text-align: center;
     font-style: normal;
@@ -73,6 +71,7 @@ h4 {
 
 #clear-storage-button:hover, #name-submit-button:hover {
     background: #FFAE64;
+    cursor: pointer;
   }
 
 /* Nav Bar */
@@ -82,6 +81,7 @@ i {
 }
 .expansion-icon {
     color: black;
+    cursor: pointer;
 }
 header {
     background-color: white;
@@ -118,7 +118,7 @@ div.my-results-link, div.about-us-link, .unhidden {
     background: black;
 }
 
-div.my-results-link:hover, div.about-us-link:hover {
+div.my-results-link:hover, div.about-us-link:hover, .unhidden:hover {
     background-color: #DC3D24;
     border: 2px solid #DC3D24;
 }
@@ -131,17 +131,45 @@ div.my-results-link:hover, div.about-us-link:hover {
     height: 5.5vw;
 }
 
-
 /* Background Creation */
 
 #index-body {
     overflow: hidden;
 }
 
-/* Footer */
+footer {
+    position: absolute;
+    width: 100vw;
+    bottom: 0%;
+    background-color: white;
+    opacity: 0.7;
+    font-weight: bold;
+    font-size: 2vw;
+    text-align: center;
+    line-height: 7vh;
+    height: 8vh;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+ }
 
-/* footer {
-    position: fixed;
+ #index-footer {
+    position: absolute;
+    width: 100vw;
+    bottom: 0%;
+    background-color: white;
+    opacity: 0.7;
+    font-weight: bold;
+    font-size: 2vw;
+    text-align: center;
+    line-height: 7vh;
+    height: 8vh;
+    right: 0;
+    left: 0;
+    margin: -83vh auto;
+ }
+#about-us-footer {
+    position: absolute;
     width: 100vw;
     bottom: 0;
     background-color: white;
@@ -149,16 +177,42 @@ div.my-results-link:hover, div.about-us-link:hover {
     font-weight: bold;
     font-size: 2vw;
     text-align: center;
-    line-height: 5vw;
-    height: 60px;
-} */
+    line-height: 7vh;
+    height: 8vh;
+    right: 0;
+    left: 0;
+    margin: -11vh auto;
+}
+#my-results-footer {
+    position: absolute;
+    width: 100vw;
+    bottom: 0%;
+    background-color: white;
+    opacity: 0.7;
+    font-weight: bold;
+    font-size: 2vw;
+    text-align: center;
+    line-height: 7vh;
+    height: 8vh;
+    right: 0;
+    left: 0;
+    margin: -8.5vh auto;
+}
 
-/* Responsive Layout */
-
-@media (max-width: 860px) {
-     .homepage-center {
-        display: block;
-    }
+#get-started-footer {
+    position: absolute;
+    width: 100vw;
+    bottom: 0%;
+    background-color: white;
+    opacity: 0.7;
+    font-weight: bold;
+    font-size: 2vw;
+    text-align: center;
+    line-height: 7vh;
+    height: 8vh;
+    right: 0;
+    left: 0;
+    margin: -9vh auto;
 }
 
 /* About Us Page */
@@ -297,7 +351,7 @@ li {
     width: 82vw;
     margin: 1vh auto;
     padding-bottom: -1vh;
-    background-color: #FFAE64;
+    background-color: #DC3D24;
     padding: 1vw;
     font-size: 1.5vw;
     line-height: 2vw;
@@ -310,6 +364,18 @@ li {
     margin-bottom: 2vh;
     margin-top: 2vh;
 }
+
+#browser-icon-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    height: 8vh;
+    padding: 1vh 2vw 1vh 2vw;
+ }
+ 
+ .browser-icons {
+     height: 7vh;
+     margin: 2vh 5vh;
+ }
 
 /* get-started Form */
 .form-container {
@@ -360,7 +426,7 @@ li {
 
 /* ---- 1 AND 2 NUMBER BUBBLES ----  */
 .form-container .number {
-  background:#DC3D24; /* Color of 1 and 2 bubbles */
+  background:#DC3D24; 
   color: #fff;
   height: 30px;
   width: 30px;
@@ -388,7 +454,7 @@ li {
   padding: 19px 39px 18px 39px;
   color: #FFF;
   margin: 0 auto;
-  background: rgb(211, 95, 77);
+  background: #DC3D24;
   font-size: 18px;
   text-align: center;
   font-style: normal;
@@ -396,7 +462,11 @@ li {
   border: none;
   border-width: 1px 1px 3px;
   margin-bottom: 10px;
-  margin-top: 20px; /* added to push Submit button down */
+  margin-top: 20px; 
+}
+#form-submit-button:hover {
+    cursor: pointer;
+    background-color:rgb(244, 138, 38);
 }
 /* ADD IF CHANGING TO BUTTON: .form-container input[type="button"]:hover */
 .form-container input[type="submit"]:hover {
@@ -408,7 +478,7 @@ li {
 .container {
   display: block;
   position: relative;
-  padding-top: 10px; /* ADDED thhis to space out checkbox options */  
+  padding-top: 10px; 
   padding-left: 35px;
   margin-bottom: 12px;
   cursor: pointer;
@@ -434,7 +504,7 @@ li {
   height: 25px;
   width: 25px;
   background-color: #eee;
-  margin-top: 10px; /* ADDED this to space out checkbox text */ 
+  margin-top: 10px; 
 }
 
 /* On mouse-over, add a grey background color */
@@ -470,96 +540,4 @@ li {
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
-}
-/* =============================================
-        Erin Edits CSS Wednesday
-============================================= */
-#browser-icon-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    height: 8vh;
-    padding: 1vh 2vw 1vh 2vw;
- }
- 
- .browser-icons {
-     height: 7vh;
-     margin: 2vh 5vh;
- }
-
- footer {
-    position: absolute;
-    width: 100vw;
-    bottom: 0%;
-    background-color: white;
-    opacity: 0.7;
-    font-weight: bold;
-    font-size: 2vw;
-    text-align: center;
-    line-height: 7vh;
-    height: 8vh;
-    right: 0;
-    left: 0;
-    margin: 0 auto;
- }
-
- #index-footer {
-    position: absolute;
-    width: 100vw;
-    bottom: 0%;
-    background-color: white;
-    opacity: 0.7;
-    font-weight: bold;
-    font-size: 2vw;
-    text-align: center;
-    line-height: 7vh;
-    height: 8vh;
-    right: 0;
-    left: 0;
-    margin: -83vh auto;
- }
-#about-us-footer {
-    position: absolute;
-    width: 100vw;
-    bottom: 0;
-    background-color: white;
-    opacity: 0.7;
-    font-weight: bold;
-    font-size: 2vw;
-    text-align: center;
-    line-height: 7vh;
-    height: 8vh;
-    right: 0;
-    left: 0;
-    margin: -11vh auto;
-}
-#my-results-footer {
-    position: absolute;
-    width: 100vw;
-    bottom: 0%;
-    background-color: white;
-    opacity: 0.7;
-    font-weight: bold;
-    font-size: 2vw;
-    text-align: center;
-    line-height: 7vh;
-    height: 8vh;
-    right: 0;
-    left: 0;
-    margin: -8.5vh auto;
-}
-
-#get-started-footer {
-    position: absolute;
-    width: 100vw;
-    bottom: 0%;
-    background-color: white;
-    opacity: 0.7;
-    font-weight: bold;
-    font-size: 2vw;
-    text-align: center;
-    line-height: 7vh;
-    height: 8vh;
-    right: 0;
-    left: 0;
-    margin: -9vh auto;
 }
