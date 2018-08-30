@@ -11,6 +11,8 @@ body {
 
 .hidden {
     display: none;
+    color: whitesmoke;
+    font-size: 0px;
 }
 
 h1 {

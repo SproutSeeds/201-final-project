@@ -109,7 +109,7 @@ function removeUserResourcesDupes(){
 function renderResourceList() {
   for (var i = 0; i < userResources.length; i++){
     var resourceName = userResources[i].name;
-    var expansionIcon = `<i class="fas fa-plus expansion-icon" alt="more information icon" title="${resourceName}"></i>`;
+    var expansionIcon = `<i class="fas fa-plus expansion-icon" id="expansion-icon" alt="more information icon" title="${resourceName}"></i>`;
     var liEl = document.createElement('li');
     if (userResources[i].address === false){
       userResources[i].address = 'Not Available';
