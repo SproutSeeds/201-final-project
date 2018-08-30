@@ -1,12 +1,13 @@
 /* General formatting */
 body {
-    /* height: 100%; */
     font-family: 'Roboto', sans-serif;
     background-image: url("../img/woodfence.jpg");
+    /* background-color: antiquewhite; */
     background-repeat: repeat-y;
     background-position: center;
     position: relative;
 }
+
 
 .hidden {
     display: none;
@@ -29,6 +30,20 @@ h2 {
     text-align: center;
     border-radius: 5px;
 }
+h5 {
+    font-family: 'Architects Daughter', cursive;
+    width: 50vw;
+    height: 5vw;
+    line-height: 4vw;
+    margin: 3vw auto;
+    font-size: 3vw;
+    color: black;
+    background-color: whitesmoke;
+    text-align: center;
+    border-radius: 5px;
+    padding-top: 1vh;
+    padding-bottom: -1vh;
+}
 
 h4 {
     font-family: 'Architects Daughter', cursive;
@@ -39,11 +54,10 @@ h4 {
 #clear-storage-button, #name-submit-button {
     position: relative;
     display: block;
-    padding: 19px 39px 18px 39px;
     color: #FFF;
     margin: 0 auto;
     background: #ff7b00;
-    font-size: 18px;
+    font-size: 2vw;
     text-align: center;
     font-style: normal;
     width: 20vw;
@@ -53,6 +67,7 @@ h4 {
     margin-bottom: 10px;
     margin-top: 20px; /* added to push Submit button down */
   }
+  
 
 #clear-storage-button:hover, #name-submit-button:hover {
     background: #FFAE64;
@@ -172,7 +187,7 @@ div.my-results-link:hover, div.about-us-link:hover {
 
 #jeff-image {
     height: 12vw;
-    margin: 0vw 0vw 0vw 53vw;
+    margin: .7vw 0vw 0vw 53vw;
 }
 #jeff-text {
     position: absolute;
@@ -181,6 +196,7 @@ div.my-results-link:hover, div.about-us-link:hover {
     width: 25vw;
     margin: .5vw;
     padding: 1vw;
+    margin-top: .8vw;
     line-height: 1.2vw;
     font-size: 1.2vw;
     background-color: rgb(243, 184, 113);
@@ -189,16 +205,20 @@ div.my-results-link:hover, div.about-us-link:hover {
 #cody-image {
     height: 12vw;
 }
+
 #cody-text {
     position: absolute;
-    bottom: 2.5vw;
+    bottom: 1.1vw;
     left: 16vw;
     width: 25vw;
     margin: .5vw;
-    padding: 1vw 1vw .5vw 1vw;
+    padding: 1vw;
     line-height: 1.2vw;
     font-size: 1.2vw;
     background-color: rgb(244, 213, 101);
+}
+#cody-div {
+    margin-top: .5vw;
 }
 
 /* Landing Page Styling */
@@ -272,10 +292,11 @@ li {
 }
 
 #privacy {
-    width: 80vw;
-    margin: 2vh auto;
+    width: 82vw;
+    margin: 1vh auto;
+    padding-bottom: -1vh;
     background-color: #FFAE64;
-    padding: 2vw;
+    padding: 1vw;
     font-size: 1.5vw;
     line-height: 2vw;
     border-radius: 5px;
@@ -460,7 +481,7 @@ li {
  
  .browser-icons {
      height: 7vh;
-     margin: 2vh 5vh
+     margin: 2vh 5vh;
  }
 
  footer {
@@ -492,9 +513,24 @@ li {
     height: 8vh;
     right: 0;
     left: 0;
-    margin: -81vh auto;
+    margin: -83vh auto;
  }
 #about-us-footer {
+    position: absolute;
+    width: 100vw;
+    bottom: 0;
+    background-color: white;
+    opacity: 0.7;
+    font-weight: bold;
+    font-size: 2vw;
+    text-align: center;
+    line-height: 7vh;
+    height: 8vh;
+    right: 0;
+    left: 0;
+    margin: -11vh auto;
+}
+#my-results-footer {
     position: absolute;
     width: 100vw;
     bottom: 0%;
@@ -507,5 +543,21 @@ li {
     height: 8vh;
     right: 0;
     left: 0;
-    margin: -6vh auto;
+    margin: -8.5vh auto;
+}
+
+#get-started-footer {
+    position: absolute;
+    width: 100vw;
+    bottom: 0%;
+    background-color: white;
+    opacity: 0.7;
+    font-weight: bold;
+    font-size: 2vw;
+    text-align: center;
+    line-height: 7vh;
+    height: 8vh;
+    right: 0;
+    left: 0;
+    margin: -9vh auto;
 }
