@@ -3,7 +3,7 @@
 // Declare global variables
 var welcomeEl = document.getElementById('welcome');
 var resourceList = document.getElementById('results');
-
+var nameSubmit = document.getElementById('name-form');
 
 //Declare icon variables 
 
@@ -21,7 +21,6 @@ var resources = [];
 
 //Empty array to hold all resource objects that match the user's specifications
 var userResources = [];
-
 
 //Render Welcome Message
 function renderWelcome() {
@@ -283,14 +282,11 @@ renderResourceList();
 
 //Show resource description event
 var expansionEl = document.getElementsByClassName('expansion-icon');
-console.log(expansionEl);
 for(var j = 0; j < expansionEl.length; j++){
   expansionEl[j].addEventListener('click', handleExpansionEvent);
 }
-// console.log(expansionEl);
 
 function handleExpansionEvent(event) {
-  console.log(event.target.title);
   for(var i = 0; i < userResources.length; i++){
     if(event.target.title === userResources[i].name){
       expansionEl[i].classList.add('hidden');
@@ -300,5 +296,11 @@ function handleExpansionEvent(event) {
   }
 }
 
+//Event to clear localstorage and reroute back to homepage
+document.getElementById('clear-storage-button').addEventListener('click', clearData, false);
 
-
+function clearData(event){
+  event.preventDefault();
+  localStorage.clear();
+  window.location = 'index.html';
+}
