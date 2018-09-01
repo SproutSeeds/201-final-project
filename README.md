@@ -1,1 +1,3 @@
-# 201-final-project
+# Safe Camp
+
+Safe Camp gives the user a centralized location of resources on the world wide web that provide shelter, food services, mental therapy,  and drug and alcoholism treatment. After a quick three question form and selection of all the checkboxes representing the type of resource the user is in search of, they are then presented with a customized list of resources that match their needs. We hope this will make it easier for the user to find help when needed and ultimately be a hub for both the person in need and the resources themselves to outsource services when they may be having an overflow at the time. Most importantly, we want to provide a safe space for the people that are in search of this help. It isn't ever easy to reach out for assistance, we know that, and want you to feel as safe and welcome as possible.
