@@ -281,6 +281,30 @@ footer {
     margin-top: .5vw;
 }
 
+#real-change-div {
+    margin: 2vw 11vw 2vw 19.5vw;
+    background-color: #DC3D24;
+    opacity: .9;
+    border-radius: .5vw;
+}
+#real-change-text {
+    text-align: center;
+    color: white;
+    font-size: 1.9vw;
+    padding: .5vw;
+    opacity: 1;
+}
+#real-change-link {
+    text-decoration: none;
+}
+#real-change-link:hover {
+    color: blue;
+    font-weight: bold;
+    font-size: 2vw;
+    opacity: .7;
+    cursor: pointer;
+}
+
 /* Landing Page Styling */
 .intro-text {
     position: relative;
